@@ -1,0 +1,37 @@
+html,
+body,
+#app {
+  height: 100%
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #1C141A;
+}
+
+h1 {
+  /*font-family: 'Rock Salt', cursive;*/
+  /*font-family: 'Jacques Francois Shadow', cursive;*/
+  font-family: 'Trade Winds', cursive;
+  /*font-family: 'Walter Turncoat', cursive;*/
+  font-size: 10rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.home-bg {
+  background-image: url('../img/parchment-texture.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-color: #FAEDC9;
+}
