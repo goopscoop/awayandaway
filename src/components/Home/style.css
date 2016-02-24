@@ -1,3 +1,48 @@
 .content-light {
-  background: rgba(255,255,255,0.2);
+  margin-top: 5rem;
+  background: url('../../img/parchment-texture.jpg');
+}
+
+.vanishIn-appear {
+  opacity: 0.01;
+
+}
+.vanishIn-appear.vanishIn-appear-active {
+  -webkit-animation-name: vanishIn-appear;
+  animation-name: vanishIn-appear;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes vanishIn-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+    -webkit-filter: blur(90px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
+}
+@keyframes vanishIn-appear {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    -webkit-filter: blur(90px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
 }

@@ -12,7 +12,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {
+      { // JS LOADER
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -21,7 +21,16 @@ module.exports = {
           presets:['es2015', 'react', 'stage-0']
         }
       },
-      { test: /\.css$/, loader: "style!css" }
+      { // CSS LOADER
+        test: /\.css$/, loader: "style!css"
+      },
+      { // IMAGE LOADER
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+    }
     ]
   }
 };

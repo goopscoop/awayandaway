@@ -9,7 +9,7 @@ h2,
 h3,
 h4,
 p {
-  color: #1C141A;
+  color: #31291F;
 }
 
 h1 {
@@ -28,7 +28,7 @@ h2 {
 }
 
 .home-bg {
-  background-image: url('../img/parchment-texture.jpg');
+  background-image: url('../img/sea-beach-ocean-waves.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
