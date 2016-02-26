@@ -1,12 +1,20 @@
 .content-light {
-  margin-top: 5rem;
-  background: url('../../img/parchment-texture.jpg');
+  margin-top: 3rem;
+  /*background: url('../../img/parchment-texture.jpg');*/
+  background: rgba(229,229,229,0);
+background: -moz-linear-gradient(top, rgba(229,229,229,0) 19%, rgba(229,229,229,0) 55%, rgba(229,229,229,0.16) 62%, rgba(229,229,229,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(19%, rgba(229,229,229,0)), color-stop(55%, rgba(229,229,229,0)), color-stop(62%, rgba(229,229,229,0.16)), color-stop(100%, rgba(229,229,229,1)));
+background: -webkit-linear-gradient(top, rgba(229,229,229,0) 19%, rgba(229,229,229,0) 55%, rgba(229,229,229,0.16) 62%, rgba(229,229,229,1) 100%);
+background: -o-linear-gradient(top, rgba(229,229,229,0) 19%, rgba(229,229,229,0) 55%, rgba(229,229,229,0.16) 62%, rgba(229,229,229,1) 100%);
+background: -ms-linear-gradient(top, rgba(229,229,229,0) 19%, rgba(229,229,229,0) 55%, rgba(229,229,229,0.16) 62%, rgba(229,229,229,1) 100%);
+background: linear-gradient(to bottom, rgba(229,229,229,0) 19%, rgba(229,229,229,0) 55%, rgba(229,229,229,0.16) 62%, rgba(229,229,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#e5e5e5', GradientType=0 );
 }
 
 .vanishIn-appear {
   opacity: 0.01;
-
 }
+
 .vanishIn-appear.vanishIn-appear-active {
   -webkit-animation-name: vanishIn-appear;
   animation-name: vanishIn-appear;
@@ -44,5 +52,45 @@
     transform-origin: 50% 50%;
     transform: scale(1, 1);
     -webkit-filter: blur(0px);
+  }
+}
+
+.spaceInDown-appear {
+  opacity: 0.01;
+}
+
+.spaceInDown-appear.spaceInDown-appear-active {
+  -webkit-animation-name: spaceInDown-appear;
+  animation-name: spaceInDown-appear;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes spaceInDown-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transform: scale(.2) translate(0%, 200%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transform: scale(1) translate(0%, 0%);
+  }
+}
+@keyframes spaceInDown-appear {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(.2) translate(0%, 200%);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 100%;
+    transform: scale(1) translate(0%, 0%);
   }
 }
