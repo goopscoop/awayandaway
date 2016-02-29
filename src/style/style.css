@@ -1,3 +1,4 @@
+
 /*
 
 Colors:
@@ -9,12 +10,25 @@ links, buttons, cta - #BECCB9
 link, button, cta accent - #E4F0D0
 */
 
-html,
-body,
-#app {
-  height: 100%
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+html,
+body,
+.home-bg {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  height: 100%;
+}
 
 /* COLOR DEFs */
 h1,
@@ -23,57 +37,112 @@ h3,
 h4,
 p,
 span {
-  color: #424D5B;
+  color: #2b313b;
 }
 
 a,
 a span {
-  color: #4D7EA8;
+  color: #424D5B;
 }
 
 h1 {
   /*font-family: 'Rock Salt', cursive;*/
   /*font-family: 'Jacques Francois Shadow', cursive;*/
-  font-family: 'Trade Winds', cursive;
+  /*font-family: 'Trade Winds', cursive;*/
+  font-family: 'Special Elite', cursive;
   /*font-family: 'Walter Turncoat', cursive;*/
-  font-size: 10rem;
+  font-size: 6rem;
   text-align: center;
 }
 
-p,
 span {
-  font-family: 'Fredericka the Great', cursive;
+  /*font-family: 'Fredericka the Great', cursive;*/
+  font-family: 'Special Elite', cursive;
+  color: black;
+}
+
+p {
+  font-family: 'Cabin Sketch', cursive;
+  color: black;
+  font-size: 2rem;
 }
 
 h2,
 h3,
 h4 {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 5rem;
+  /*font-family: 'Fredericka the Great', cursive;*/
+  font-family: 'Special Elite', cursive;
   text-align: center;
 }
 
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 2.5rem;
+}
 
 .home-bg {
-  background-image: url('../img/sea-beach-ocean-waves.jpg');
+  background-image: url('../img/bg2.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-color: #E5E5E5;
 }
 
+/* NAVAGATION */
+
 .aaa-nav {
-  padding: 0.6rem 3em;
+  padding: 0.6rem 3rem;
   text-align: center;
-  font-size: 3rem;
-  background-color: #E5E5E5;
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: #424D5B;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 2rem;
+}
+
+nav a:hover,
+nav a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.content {
+  background-color: rgba(229,229,229,0.7);
+  margin-top: 2%;
+  /*overflow-y: scroll;*/
 }
 
 .footer {
   background-color: #A3B2CC;
+  text-align: center;
 }
 
+.footer a {
+  padding: 8px 12px
+}
+
+
+/* LINK EFFECTS */
 /* Effect 9: second text and borders */
 .cl-effect-9 a {
   margin: 0 20px;
@@ -87,7 +156,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 1px;
-  background: #A3B2CC;
+  background: #424D5B;
   content: '';
   opacity: 0.2;
   -webkit-transition: opacity 0.3s, height 0.3s;
@@ -121,7 +190,8 @@ h4 {
   text-transform: none;
   font-style: italic;
   font-size: 0.75em;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  /*font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;*/
+  font-family: 'Cabin Sketch', cursive;
   opacity: 0;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   -moz-transition: -moz-transform 0.3s, opacity 0.3s;
@@ -152,4 +222,136 @@ h4 {
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
   transform: translateY(0%);
+}
+
+
+/* ANIMATIONS */
+
+/* HOME ANIMATION IN*/
+.vanishIn-appear {
+  opacity: 0.01;
+}
+
+.vanishIn-appear.vanishIn-appear-active {
+  -webkit-animation-name: vanishIn-appear;
+  animation-name: vanishIn-appear;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes vanishIn-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+    -webkit-filter: blur(90px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
+}
+@keyframes vanishIn-appear {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    -webkit-filter: blur(90px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
+}
+
+/* HOME ANIMATION OUT */
+.vanishIn-leave {
+  opacity: 1;
+}
+
+.vanishIn-leave.vanishIn-leave-active {
+  -webkit-animation-name: vanishIn-leave;
+  animation-name: vanishIn-leave;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes vanishIn-leave {
+  0% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+    -webkit-filter: blur(20px);
+  }
+}
+@keyframes vanishIn-leave {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    -webkit-filter: blur(20px);
+  }
+}
+
+.spaceInDown-appear {
+  opacity: 0.01;
+}
+
+.spaceInDown-appear.spaceInDown-appear-active {
+  -webkit-animation-name: spaceInDown-appear;
+  animation-name: spaceInDown-appear;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes spaceInDown-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transform: scale(.2) translate(0%, 200%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transform: scale(1) translate(0%, 0%);
+  }
+}
+@keyframes spaceInDown-appear {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(.2) translate(0%, 200%);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 50% 100%;
+    transform: scale(1) translate(0%, 0%);
+  }
 }
