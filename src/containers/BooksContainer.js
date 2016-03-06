@@ -11,7 +11,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     setCurrentlySelected: (i) => dispatch(actions.setCurrentlySelected(i)),
-    setFocusOnBook: () => dispatch(actions.setFocusOnBook()),
+    openPreview: () => dispatch(actions.openPreview()),
+    closePreview: () => dispatch(actions.closePreview()),
+    expandPreview: () => dispatch(actions.expandPreview()),
+    retractPreview: () => dispatch(actions.retractPreview()),
   };
 }
 
