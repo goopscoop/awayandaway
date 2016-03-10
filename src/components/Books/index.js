@@ -1,74 +1,89 @@
 import React from 'react';
 import NavBar from '../shared/NavBar';
 import Footer from '../shared/Footer';
+import PreviewPanel from './components/PreviewPanel';
+import BookList from './components/BookList';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-// const Books = () => {
+class Books extends React.Component {
 
-//   const renderBookList = () => this.props.books.books.map((el, i )=>(
-//     <div
-//       className="media"
-//       style={{
-//         paddingBottom: '10px'
-//       }}>
-//       <div className="media-left">
-//         <a href="#">
-//           <img 
-//             className="media-object"
-//             width="150px"
-//             src={el.img}
-//             style={{
-//               paddingLeft: '15px'
-//             }}
-//           />
-//         </a>
-//       </div>
-//       <div className="media-body" style={{padding: '0 15px'}}>
-//         <div className="row">
-//           <h4 className="media-heading">{el.name}</h4>
-//           {
-//             el.quote ?
-//             <div>
-//               <p style={{textAlign: 'center'}}><em>"{el.quote}"</em></p>
-//               <p className="pull-right">- {el.quoteBy}</p>
-//             </div>
-//             :
-//             <p style={{textAlign: 'center'}}>{el.shortDesc}</p>
-//           }
-//           </div>
-//         <div className="row" style={{padding: '0 15px'}}>
-//           <span className="btn btn-primary btn-small pull-right">Learn More</span>
-//         </div>
-//       </div>
-//     </div>
-//   ))
+  packagePreviewPanelProps = ()=>{
+    return {
+      book: this.props.books.books[this.props.books.currentlySelected],
+      isPreviewEpanded: this.props.books.isPreviewEpanded,
+      closePreview: (e) => {
+        e.preventDefault();
+        this.props.closePreview();
+      },
+      expandPreview: (e) => {
+        e.preventDefault();
+        this.props.expandPreview();
+      },
+      retractPreview: (e) => {
+        e.preventDefault();
+        this.props.retractPreview();
+      },
+    };
+  }
 
-//   return (
-//     <div className="row">
-//       <div
-//         className="home-bg">
-//         <ReactCSSTransitionGroup
-//           transitionName="vanishIn"
-//           transitionAppear={true}
-//           transitionAppearTimeout={1000}
-//           transitionEnterTimeout={500}>
-//           <div key="1" className="col-md-8 col-md-offset-2 content">
-//             <h1>
-//               Books
-//             </h1>
-//             <NavBar currentPage="books"/>
-//             <hr/>
-//             <div className="row" >
-//               {
-//                 renderBookList()
-//               }
-//             </div>
-//           </div>
-//           <Footer/>
-//         </ReactCSSTransitionGroup>
-//       </div>
-//     </div>
-//   );
-// }
+  bookListActions = {
+    setCurrentlySelected: this.props.setCurrentlySelected,
+    openPreview: (e) => {
+      e.preventDefault();
+      this.props.openPreview();
+    },
+  }
 
-// export default Books;
+  diplayPreviewPanel = () =>{
+    if(this.props.books.isPreviewOpen){
+      return (
+        <div className="row">
+          <PreviewPanel
+            {...this.packagePreviewPanelProps()}
+          />
+        </div>
+      )
+    }
+  }
+
+  render(){
+    return (
+      <div className="row">
+        <div
+          className="home-bg">
+            <div key="1" className="col-md-10 col-md-offset-1 content">
+              <h1>
+                Books
+              </h1>
+              <NavBar currentPage="books"/>
+              <hr/>
+              <div className="row" >
+                <div className="col-md-12">
+                  <div className="row" style={{marginBottom: '15px'}}>
+                  <BookList
+                    header="Novels"
+                    books={this.props.books.books}
+                    {...this.bookListActions}
+                  />
+                  </div>
+                  {
+                    this.diplayPreviewPanel()
+                  }
+                  <div className="row" style={{marginBottom: '15px'}}>
+                  <BookList
+                    header="Short Stories"
+                    books={this.props.books.books}
+                    {...this.bookListActions}
+                  />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Footer/>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Books;

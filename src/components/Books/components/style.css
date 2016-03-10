@@ -3,10 +3,12 @@
 }
 
 .preview-panel .retracted {
-  height: 400px;
+  max-height: 400px;
 }
 
 .preview-panel .expanded {
+  -webkit-animation-duration: 0.35s;
+  animation-duration: 0.35s;
   max-height: 800px;
 }
 
@@ -155,4 +157,94 @@
 .pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse;
+}
+
+.slideDown-appear {
+  max-height: 1px;
+  opacity: 0.01;
+}
+
+.slideDown-appear.slideDown-appear-active {
+  -webkit-animation-name: slideDown-appear;
+  animation-name: slideDown-appear;
+  -webkit-animation-duration: 0.35s;
+  animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDown-appear {
+  0% {
+    max-height: 1px;
+    opacity: 0.01;
+  }
+  
+  75% {
+    opacity: 0.5;
+  }
+
+  100% {
+    max-height: 400px;
+    opacity: 1;
+  }
+}
+@keyframes slideDown-appear {
+  0% {
+    max-height: 1px;
+    opacity: 0.01;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  100% {
+    max-height: 400px;
+    opacity: 1;
+  }
+}
+
+.slideDown-leave {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.slideDown-leave.slideDown-leave-active {
+  -webkit-animation-name: slideDown-leave;
+  animation-name: slideDown-leave;
+  -webkit-animation-duration: 0.35s;
+  animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDown-leave {
+  0% {
+    max-height: 400px;
+    opacity: 1;
+  }
+  
+  25% {
+    opacity: 0.5;
+  }
+
+  100% {
+    max-height: 1px;
+    opacity: 0.01;
+  }
+}
+@keyframes slideDown-leave {
+  0% {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  100% {
+    max-height: 1px;
+    opacity: 0.01;
+  }
 }

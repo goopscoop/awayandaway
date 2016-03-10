@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Books2 from '../components/Books/Books2';
+import Books from '../components/Books';
 import * as actions from '../redux/modules/books';
 
 function mapStateToProps(state) {
@@ -21,4 +21,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Books2);
+)(Books);

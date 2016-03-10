@@ -3,6 +3,7 @@ import NavBar from '../shared/NavBar';
 import Footer from '../shared/Footer';
 import BookSelector from '../shared/BookSelector';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import '../../style/buttons.css';
 
 
 class Home extends React.Component {
@@ -23,7 +24,7 @@ class Home extends React.Component {
             transitionAppearTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionEnterTimeout={1000}>
-            <div key="1" className="col-md-8 col-md-offset-2 content">
+            <div key="1" className="col-md-10 col-md-offset-1 content">
               <h1 style={{padding: '5rem 0 4rem'}}>
                 Away and Away
               </h1>
