@@ -3,7 +3,8 @@ import React from 'react';
 const BookList = ({
   books,
   setCurrentlySelected,
-  openPreview
+  openPreview,
+  header
 }) => {
 
   const renderBookList = () => books.map((el, i )=>{
@@ -32,7 +33,7 @@ const BookList = ({
 
   return (
     <div>
-      <h4 style={{textAlign: 'left'}}>Novels</h4>
+      <h4 style={{textAlign: 'left'}}>{header}</h4>
       {
         renderBookList()
       }

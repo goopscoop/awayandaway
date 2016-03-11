@@ -48,38 +48,34 @@ class Books extends React.Component {
 
   render(){
     return (
-      <div className="row">
-        <div
-          className="home-bg">
-            <div key="1" className="col-md-10 col-md-offset-1 content">
-              <h1>
-                Books
-              </h1>
-              <NavBar currentPage="books"/>
-              <hr/>
-              <div className="row" >
-                <div className="col-md-12">
-                  <div className="row" style={{marginBottom: '15px'}}>
-                  <BookList
-                    header="Novels"
-                    books={this.props.books.books}
-                    {...this.bookListActions}
-                  />
-                  </div>
-                  {
-                    this.diplayPreviewPanel()
-                  }
-                  <div className="row" style={{marginBottom: '15px'}}>
-                  <BookList
-                    header="Short Stories"
-                    books={this.props.books.books}
-                    {...this.bookListActions}
-                  />
-                  </div>
-                </div>
-              </div>
+      <div>
+        <div className="row">
+          <h1>
+            Books
+          </h1>
+          <NavBar currentPage="books"/>
+          <hr/>
+        </div>
+        <div className="row" >
+          <div className="col-md-12">
+            <div className="row" style={{marginBottom: '15px'}}>
+            <BookList
+              header="Novels"
+              books={this.props.books.books}
+              {...this.bookListActions}
+            />
             </div>
-            <Footer/>
+            {
+              this.diplayPreviewPanel()
+            }
+            <div className="row" style={{marginBottom: '15px'}}>
+            <BookList
+              header="Short Stories"
+              books={this.props.books.books}
+              {...this.bookListActions}
+            />
+            </div>
+          </div>
         </div>
       </div>
     );
