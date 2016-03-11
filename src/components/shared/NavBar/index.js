@@ -1,38 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const NavBar = ({currentPage}) => {
+const NavBar = ({currentPage, links}) => {
+
   return (
     <div className="aaa-nav">
       <nav className="cl-effect-9">
         {
-          currentPage !== 'home' ?
-          <Link to="/">
-            <span>Home</span>
-            <span>Discover</span>
-          </Link>
-          :
-          <span></span>
+          links.map((el, i)=>{
+            const { title, subtitle, action } = el;
+            return (
+              <a 
+                onClick={action}
+                href="#">
+                <span>{title}</span>
+                <span>{subtitle}</span>
+              </a>
+            );
+          })
         }
-        {
-          currentPage !== 'books' ?
-          <Link to="books">
-            <span>Books</span>
-            <span>Adventure Awaits</span>
-          </Link>
-          :
-          <span></span>
-        }
-        {
-          currentPage !== 'about' ?
-          <a href="#">
-            <span>About</span>
-            <span>Author S.C. Barrus</span>
-          </a>
-          :
-          <span></span>
-        }
-        
       </nav>
     </div>
   );
