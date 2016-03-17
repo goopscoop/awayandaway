@@ -3,7 +3,7 @@ import Home from '../components/Home';
 
 function mapStateToProps(state) {
   return {
-    home: state.home // gives our component access to state through props.toDoApp
+    nav: state.nav // gives our component access to state through props.toDoApp
   }
 }
 

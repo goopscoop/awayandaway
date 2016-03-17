@@ -49,13 +49,8 @@ class Books extends React.Component {
   render(){
     return (
       <div>
-        <div className="row">
-          <h1>
-            Books
-          </h1>
-          <NavBar currentPage="books"/>
-          <hr/>
-        </div>
+        <NavBar currentPage="Books"/>
+        <hr/>
         <div className="row" >
           <div className="col-md-12">
             <div className="row" style={{marginBottom: '15px'}}>

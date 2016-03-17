@@ -29,7 +29,7 @@ class Home extends React.Component {
         <h2 style={{ padding: '2rem 0 5rem' }}>
           Home of Author S.C. Barrus
         </h2>
-        <NavBar currentPage="home"/>
+        <NavBar currentPage="home" />
         </ReactCSSTransitionGroup>
       </div>
     );

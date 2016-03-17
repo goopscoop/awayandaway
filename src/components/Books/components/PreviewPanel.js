@@ -35,6 +35,10 @@ const PreviewPanel = ({
       return (
         <nav className="cl-effect-12 menu-btn">
           <a href="#" onClick={expandPreview}>
+            <p
+              onClick={expandPreview}
+              className=""
+              style={{ textAlign: 'center'}}>Description</p>
             <span
               className="glyphicon glyphicon-menu-down close-preview  animated infinite pulse"
             ></span>
@@ -98,7 +102,6 @@ const PreviewPanel = ({
               </strong>
             </p>
             <br/>
-            <h4>{book.cta}</h4>
             {
               showExpandPreviewBtn()
             }

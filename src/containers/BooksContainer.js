@@ -4,7 +4,8 @@ import * as actions from '../redux/modules/books';
 
 function mapStateToProps(state) {
   return {
-    books: state.books // gives our component access to state through props.toDoApp
+    books: state.books,
+    nav: state.nav
   }
 }
 
