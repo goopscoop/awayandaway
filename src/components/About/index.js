@@ -1,8 +1,9 @@
 import React from 'react';
+import NavBar from '../shared/NavBar';
 
 const About = () => (
   <div>
-    hi
+    <NavBar currentPage="About"/>
   </div>
 );
 

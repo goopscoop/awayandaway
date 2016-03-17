@@ -1,0 +1,11 @@
+.disabled-link {
+  color: gray;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: underline;
+}
+
+.nav-subtitle {
+  text-align: center;
+  font-style: italic;
+}
